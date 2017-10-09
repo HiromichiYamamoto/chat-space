@@ -1,3 +1,177 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body { height:100%; margin:0; }
+
+
+.clearfix:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.information{
+  .pop{
+    color: #fff;
+    background-color: #00A070;
+    text-align: center;
+  }
+}
+  .main-left {
+    height: 100vh;
+    width: 300px;
+    float: left;
+
+  .main-left__user {
+    height: 15%;
+    width: 100%;
+    background-color: #090c10;
+    position: relative;
+    .main-left__user-content {
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      .main-left__user-name {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 20px;
+        position: relative;
+        display: inline-block;
+      }
+      .main-left__user-new-group {
+        color: #fff;
+        margin-left: 90px;
+        position: relative;
+        display: inline-block;
+        .fa {
+          color: #fff;
+        }
+      }
+      .main-left__user-edit-user {
+        color: #fff;
+        position: relative;
+        display: inline-block;
+        .fa {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .main-left__group {
+    height: 85%;
+    width: 100%;
+    background-color: #253141;
+    .main-left__group-lists {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0 20px;
+      .main-left__group-list{
+        box-sizing: border-box;
+        padding: 20px 0 40px;
+        .main-left__group-name {
+          color: #fff;
+          font-size: 15px;
+        }
+        .main-left__group-message {
+          color: #fff;
+          font-size: 11px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+.main{
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+  .main__header{
+    height: 15%;
+    border: 1px solid #eee;
+    .main__header--group {
+      margin: 0 40px;
+      .main__header--group-name{
+        color: #333;
+        font-size: 20px;
+        margin: 35px 0 15px;
+        float: left;
+      }
+      .main__header--group-edit{
+        color: #38AEF0;
+        font-size: 15px;
+        padding: 12.5px 20px;
+        margin: 28px 20px 0;
+        border: 1px solid #38AEF0;
+        float: right;
+      }
+    }
+    .main__header--member {
+      color: #999;
+      font-size: 12px;
+      margin: 0 40px;
+    }
+  }
+  .main__body{
+    height: calc( 100vh - 15% - 90px );
+    overflow-y: scroll;
+    .main__body--message-list {
+      padding-top: 26px;
+      padding-left: 40px;
+      .main__body--message {
+        padding: 20px 0;
+        .main__body--message-name {
+          font-size: 16px;
+          color: #434A54;
+          font-weight: bold;
+          float: left;
+        }
+        .main__body--message-time {
+          color: #999;
+          font-size: 12px;
+          padding: 0 10px 10px;
+          float: left;
+        }
+        .main__body--message-body {
+          color: #434A54;
+          clear: both;
+        }
+      }
+    }
+  }
+  .main__footer{
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+      .text{
+        border: none;
+        box-sizing: border-box;
+        float: left;
+        height: 50px;
+        padding: 0 10px;
+        width: calc(100% - 150px);
+        .fa {
+          font-size: 20px;
+          line-height: 50px;
+          background-color: #fff;
+          float: left;
+          height: 50px;
+          padding-right: 10px;
+        }
+      }
+    }
+    .button {
+      background-color: #38AEF0;
+      border: none;
+      color: #fff;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+    }
+  }
+
