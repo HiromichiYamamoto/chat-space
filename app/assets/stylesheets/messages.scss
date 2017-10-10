@@ -1,4 +1,5 @@
 html, body { height:100%; margin:0; }
+@import './mixin/_fonts';
 
 
 .clearfix:after {
@@ -9,22 +10,22 @@ html, body { height:100%; margin:0; }
 
 .information{
   .pop{
-    color: #fff;
+    @include color();
     background-color: #00A070;
     text-align: center;
   }
 }
-  .main-left {
-    height: 100vh;
-    width: 300px;
-    float: left;
+.main-left {
+  height: 100vh;
+  width: 300px;
+  float: left;
 
-  .main-left__user {
+  &__user {
     height: 15%;
     width: 100%;
     background-color: #090c10;
     position: relative;
-    .main-left__user-content {
+    &-content {
       height: 50px;
       width: 100%;
       line-height: 50px;
@@ -32,50 +33,50 @@ html, body { height:100%; margin:0; }
       position: absolute;
       top: 0;
       bottom: 0;
-      .main-left__user-name {
-        color: #fff;
+      &-name {
+        @include color();
         font-size: 20px;
         font-weight: bold;
         margin: 0 20px;
         position: relative;
         display: inline-block;
       }
-      .main-left__user-new-group {
-        color: #fff;
+      &-newgroup {
+        @include color();
         margin-left: 90px;
         position: relative;
         display: inline-block;
         .fa {
-          color: #fff;
+          @include color();
         }
       }
-      .main-left__user-edit-user {
-        color: #fff;
+      &-edit {
+        @include color();
         position: relative;
         display: inline-block;
         .fa {
-          color: #fff;
+          @include color();
         }
       }
     }
   }
-  .main-left__group {
+  &__group {
     height: 85%;
     width: 100%;
     background-color: #253141;
-    .main-left__group-lists {
+    &-lists {
       height: 100%;
       box-sizing: border-box;
       padding: 0 20px;
-      .main-left__group-list{
+      &-list{
         box-sizing: border-box;
         padding: 20px 0 40px;
-        .main-left__group-name {
-          color: #fff;
+        &-name {
+          @include color();
           font-size: 15px;
         }
-        .main-left__group-message {
-          color: #fff;
+        &-message {
+          @include color();
           font-size: 11px;
           margin-top: 5px;
         }
@@ -88,18 +89,18 @@ html, body { height:100%; margin:0; }
   height: 100vh;
   width: calc( 100vw - 300px );
   float: left;
-  .main__header{
+  .main__header {
     height: 15%;
     border: 1px solid #eee;
-    .main__header--group {
+    &-group {
       margin: 0 40px;
-      .main__header--group-name{
+      &-name{
         color: #333;
         font-size: 20px;
         margin: 35px 0 15px;
         float: left;
       }
-      .main__header--group-edit{
+      &-edit{
         color: #38AEF0;
         font-size: 15px;
         padding: 12.5px 20px;
@@ -108,40 +109,40 @@ html, body { height:100%; margin:0; }
         float: right;
       }
     }
-    .main__header--member {
+    &-member {
       color: #999;
       font-size: 12px;
       margin: 0 40px;
     }
   }
-  .main__body{
+  &__body{
     height: calc( 100vh - 15% - 90px );
     overflow-y: scroll;
-    .main__body--message-list {
+    &-message {
       padding-top: 26px;
       padding-left: 40px;
-      .main__body--message {
+      &-lists {
         padding: 20px 0;
-        .main__body--message-name {
+        &-name {
           font-size: 16px;
           color: #434A54;
           font-weight: bold;
           float: left;
         }
-        .main__body--message-time {
+        &-time {
           color: #999;
           font-size: 12px;
           padding: 0 10px 10px;
           float: left;
         }
-        .main__body--message-body {
+        &-body {
           color: #434A54;
           clear: both;
         }
       }
     }
   }
-  .main__footer{
+  &__footer{
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
@@ -153,6 +154,13 @@ html, body { height:100%; margin:0; }
         height: 50px;
         padding: 0 10px;
         width: calc(100% - 150px);
+      }
+
+      &-mask {
+        background-color: #fff;
+        float: left;
+        height: 50px;
+        padding-right: 0px;
         .fa {
           font-size: 20px;
           line-height: 50px;
@@ -166,12 +174,12 @@ html, body { height:100%; margin:0; }
     .button {
       background-color: #38AEF0;
       border: none;
-      color: #fff;
+      @include color();
       float: right;
       font-size: 16px;
       height: 50px;
-      margin-left: 15px;
+      margin-left: 0px;
       padding: 0 30px;
     }
-  }
+}
 
