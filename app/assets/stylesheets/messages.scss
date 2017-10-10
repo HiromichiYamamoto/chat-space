@@ -160,26 +160,35 @@ html, body { height:100%; margin:0; }
         background-color: #fff;
         float: left;
         height: 50px;
-        padding-right: 0px;
-        .fa {
-          font-size: 20px;
-          line-height: 50px;
-          background-color: #fff;
-          float: left;
-          height: 50px;
-          padding-right: 10px;
+        width: 30px;
+        label {
+          color: white;
+          background-color: white;
+          .fa-picture-o {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: black;
+            font-size: 20px;
+            line-height: 50px;
+          }
         }
       }
-    }
-    .button {
-      background-color: #38AEF0;
-      border: none;
-      @include color();
-      float: right;
-      font-size: 16px;
-      height: 50px;
-      margin-left: 0px;
-      padding: 0 30px;
-    }
+      .button {
+        background-color: #38AEF0;
+        border: none;
+        @include color();
+        float: right;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 0px;
+        padding: 0 30px;
+      }
 }
+}
+
+
 

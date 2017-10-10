@@ -32,8 +32,9 @@
     %form
       %input.text{placeholder: 'type a message', type: 'text'}/
       .main__footer-mask
-        %i.fa.fa-picture-o{ aria: { hidden: "true" }}
-      .main__footer-mask
+        %label{ for: "file_photo"}
+          %i.fa.fa-picture-o{ aria: { hidden: "true"}}
+          %input{ type: "file", id: "file_photo", style: "display:none;"}
       %input.button{ type: "submit", name: "commit", value: "Send" }
 
 
