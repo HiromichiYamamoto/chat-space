@@ -8,6 +8,5 @@ class UsersController < ApplicationController
   end
 
   private
-  params.require(:user).permit
 
 end
