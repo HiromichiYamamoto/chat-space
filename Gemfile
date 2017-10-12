@@ -60,4 +60,6 @@ gem 'devise'
 
 gem 'erb2haml'
 
+gem 'pry-rails'
+
 
