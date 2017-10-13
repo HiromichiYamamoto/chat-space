@@ -1,5 +1,9 @@
 class GroupsController < ApplicationController
 
+  def index
+    @groups = current_user.groups if user_signed_in?
+  end
+
   def new
     @group = Group.new
   end
@@ -17,10 +21,17 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def update
+    group = Group.find(params[:id])
+    if group.user_id == current_user.id
+      group.update(group_params)
+      redirect_to :root
+  end
+
   private
 
   def group_params
     params.require(:group).permit(:name, user_ids: [])
   end
-
+end
 end
