@@ -3,7 +3,7 @@
     .main-left__user-content
       .main-left__user-content-name user
       .main-left__user-content-newgroup
-        = link_to root_path do
+        = link_to new_group_path do
           = fa_icon 'pencil-square-o', class: 'icon'
       .main-left__user-content-edit
         = link_to edit_user_registration_path do
@@ -11,8 +11,9 @@
   .main-left__group
     .main-left__group-lists
       .main-left__group-lists-list
-        .main-left__group-lists-list-name group
-        .main-left__group-lists-list-message zzz
+        = link_to :root
+        .main-left__group-lists-list-name @group.name
+        .main-left__group-lists-list-message まだメッセージはありません
 .main
   .main__header
     .main__header-group.clearfix

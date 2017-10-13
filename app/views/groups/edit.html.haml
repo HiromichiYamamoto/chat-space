@@ -1,0 +1,23 @@
+.chat-group-form
+  %h1 チャットグループ編集
+  = form_for(@group) do |f|
+    - if @group.errors.any?
+      .chat-group-form__errors
+        %h2
+          1件のエラーが発生しました。
+          %ul
+            %li エラーです
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label "グループ名", class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        = f.text_field :name, class: 'chat-group-form__input', placeholder: "グループ名を入力してください"
+
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label "チャットメンバー", class: 'chat-group-form__label'
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
+        = f.submit "登録", class: 'chat-group-form__action-btn'
