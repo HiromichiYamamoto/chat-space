@@ -11,8 +11,9 @@
   .main-left__group
     .main-left__group-lists
       .main-left__group-lists-list
-        .main-left__group-lists-list-name group
-        .main-left__group-lists-list-message zzz
+        = link_to :root
+        .main-left__group-lists-list-name @group.name
+        .main-left__group-lists-list-message まだメッセージはありません
 .main
   .main__header
     .main__header-group.clearfix

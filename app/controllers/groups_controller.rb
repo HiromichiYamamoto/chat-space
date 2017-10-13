@@ -9,12 +9,12 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to :root, notice: 'グループを作成しました。'
     else
-      render new_group_path
+      render :new
     end
   end
 
   def edit
-
+    @group = Group.find(params[:id])
   end
 
   private
