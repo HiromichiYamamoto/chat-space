@@ -11,9 +11,8 @@
   .main-left__group
     .main-left__group-lists
       .main-left__group-lists-list
-        = link_to :root
-        .main-left__group-lists-list-name @group.name
-        .main-left__group-lists-list-message まだメッセージはありません
+        - if user_signed_in?
+          = render partial: "index", locals: { groups: @groups }
 .main
   .main__header
     .main__header-group.clearfix
@@ -35,6 +34,3 @@
           %i.fa.fa-picture-o{ aria: { hidden: "true"}}
           %input{ type: "file", id: "file_photo", style: "display:none;"}
       %input.button{ type: "submit", name: "commit", value: "Send" }
-
-
-
