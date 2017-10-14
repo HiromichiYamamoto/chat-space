@@ -12,12 +12,12 @@
         = f.label "グループ名", class: 'chat-group-form__label'
       .chat-group-form__field--right
         = f.text_field :name, class: 'chat-group-form__input', placeholder: "グループ名を入力してください"
-
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label "チャットメンバー", class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        = f.collection_check_boxes(:user_ids, @group.users, :id, :name)
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
         = f.submit "登録", class: 'chat-group-form__action-btn'

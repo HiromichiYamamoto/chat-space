@@ -110,27 +110,33 @@ html, body { height:100%; margin:0; }
   }
   &__body{
     height: calc( 100vh - 15% - 90px );
-    overflow-y: scroll;
     &-message {
-      padding-top: 26px;
-      padding-left: 40px;
-      &-lists {
-        padding: 20px 0;
-        &-name {
-          font-size: 16px;
-          color: #434A54;
-          font-weight: bold;
-          float: left;
+      padding: 26px 40px 0;
+      height: calc(100vh - 100px - 90px);
+      overflow-y: scroll;
+      &-list {
+        margin-bottom: 40px;
+        &-upper{
+          display: flex;
+          &-name {
+            color: #434a54;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &-time {
+            color: #999;
+            font-size: 12px;
+            padding-left: 10px;
+            float: left;
+          }
         }
-        &-time {
-          color: #999;
-          font-size: 12px;
-          padding: 0 10px 10px;
-          float: left;
-        }
-        &-body {
-          color: #434A54;
-          clear: both;
+        &-lower{
+          padding: 10px 0px;
+          &-body {
+            color: #434A54;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
         }
       }
     }

@@ -11,9 +11,8 @@
   .main-left__group
     .main-left__group-lists
       .main-left__group-lists-list
-        = link_to :root
-        .main-left__group-lists-list-name @group.name
-        .main-left__group-lists-list-message まだメッセージはありません
+        - if user_signed_in?
+          = render partial: "index", locals: { groups: @groups }
 .main
   .main__header
     .main__header-group.clearfix
@@ -22,10 +21,12 @@
     .main__header-member member
   .main__body
     .main__body-message
-      .main__body-message-lists.clearfix
-        .main__body-message-lists-name yamamoto
-        .main__body-message-lists-time 2017/10/08 22:44:32
-        .main__body--message-lists-body こんにちわ
+      .main__body-message-list
+        .main__body-message-list-upper
+          .main__body-message-list-upper-name yamamoto
+          .main__body-message-list-upper-time 2017/10/08 22:44:32
+        .main__body-message-list-lower
+          .main__body--message-list-lower-body こんにちわ
 
   .main__footer
     %form
@@ -35,6 +36,3 @@
           %i.fa.fa-picture-o{ aria: { hidden: "true"}}
           %input{ type: "file", id: "file_photo", style: "display:none;"}
       %input.button{ type: "submit", name: "commit", value: "Send" }
-
-
-
