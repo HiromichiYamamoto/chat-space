@@ -156,25 +156,18 @@ html, body { height:100%; margin:0; }
       }
 
       &-mask {
-        background-color: #fff;
-        float: left;
-        height: 50px;
-        width: 30px;
-        label {
-          color: white;
-          background-color: white;
+          background-color: #fff;
+          float: left;
+          height: 50px;
+          padding-right: 10px;
           .fa-picture-o {
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
-            font-size: inherit;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            color: black;
             font-size: 20px;
             line-height: 50px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
           }
-        }
       }
       .button {
         background-color: #38AEF0;
@@ -187,6 +180,22 @@ html, body { height:100%; margin:0; }
         padding: 0 30px;
       }
 }
+}
+.text_field {
+    border: none;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    padding: 0 10px;
+    width: calc(100% - 150px);
+}
+
+.main__footer-mask-image{
+    font-size: 0px;
+    line-height: 50px;
+}
+.main__footer-mask-hidden {
+    display: none;
 }
 
 

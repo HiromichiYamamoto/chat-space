@@ -2,7 +2,6 @@ html, body { height:100%; margin:0; }
 
 @import './mixin/_fonts';
 
-
 .clearfix:after {
     clear: both;
     content: '';
@@ -160,9 +159,6 @@ html, body { height:100%; margin:0; }
         float: left;
         height: 50px;
         width: 30px;
-        label {
-          color: white;
-          background-color: white;
           .fa-picture-o {
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
@@ -174,7 +170,6 @@ html, body { height:100%; margin:0; }
             font-size: 20px;
             line-height: 50px;
           }
-        }
       }
       .button {
         background-color: #38AEF0;
