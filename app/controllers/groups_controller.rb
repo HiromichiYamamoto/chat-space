@@ -26,6 +26,7 @@ class GroupsController < ApplicationController
     if group.user_id == current_user.id
       group.update(group_params)
       redirect_to :root
+    end
   end
 
   private
@@ -34,5 +35,4 @@ class GroupsController < ApplicationController
       params.require(:group).permit(:name, user_ids: [])
     end
 
-  end
 end
