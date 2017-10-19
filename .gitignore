@@ -17,4 +17,4 @@
 .byebug_history
 
 #imageのアップロード
-/app/uploaders/image_uploader.rb
+/public/uploads/
