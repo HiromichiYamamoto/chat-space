@@ -14,10 +14,12 @@ class ApplicationController < ActionController::Base
 
   def group_message(group)
     message = Message.where(group_id: group).last
-    if (message.body)
+    if (message.image).present?
+      "画像が投稿されています"
+    elsif (message.body)
       message.body
     else
-      "ありません"
+      "メッセージがありません"
     end
   end
 end
