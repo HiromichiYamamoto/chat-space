@@ -1,5 +1,8 @@
 .main-left__group-lists
   - groups.each do |group|
-    .main-left__group-lists-list
-      .main-left__group-lists-list-name #{group.name}
-      .main-left__group-lists-list-message まだメッセージはありません
+    = link_to group_messages_path(group.id) do
+      .main-left__group-lists-list
+        .main-left__group-lists-list-name
+          = group.name
+        .main-left__group-lists-list-message
+          = group_message(group)

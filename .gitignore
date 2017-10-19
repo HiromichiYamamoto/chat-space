@@ -12,7 +12,10 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/app/uploaders/image_uploader.rb
+app/uploaders/image_uploader.rb
 
 # Ignore Byebug command history file.
 .byebug_history
+
+#imageのアップロード
+/app/uploaders/image_uploader.rb

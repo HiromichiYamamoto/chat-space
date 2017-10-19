@@ -9,7 +9,5 @@
         = link_to edit_user_registration_path do
           = fa_icon 'cog', class: 'icon'
   .main-left__group
-    .main-left__group-lists
-      .main-left__group-lists-list
-        - if user_signed_in?
-          = render 'layouts/index', groups: @groups
+    - if user_signed_in?
+      = render partial: 'layouts/index', locals: {groups: @groups}
