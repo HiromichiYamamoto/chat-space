@@ -87,11 +87,19 @@ html, body { height:100%; margin:0; }
     border: 1px solid #eee;
     &-group {
       margin: 0 40px;
-      &-name{
-        color: #333;
-        font-size: 20px;
-        margin: 35px 0 15px;
+      &-left{
         float: left;
+          &-name{
+            color: #333;
+            font-size: 20px;
+            margin: 35px 0 15px;
+            float: left;
+          }
+        &-member {
+          color: #999;
+          font-size: 12px;
+          margin-top: 15px;
+        }
       }
       &-edit{
         color: #38AEF0;
@@ -102,17 +110,12 @@ html, body { height:100%; margin:0; }
         float: right;
       }
     }
-    &-member {
-      color: #999;
-      font-size: 12px;
-      margin: 0 40px;
-    }
   }
   &__body{
     height: calc( 100vh - 15% - 90px );
     &-message {
       padding: 26px 40px 0;
-      height: calc(100vh - 100px - 90px);
+      height: calc(100vh - 100px - 135px);
       overflow-y: scroll;
       &-list {
         margin-bottom: 40px;
