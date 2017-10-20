@@ -58,6 +58,7 @@ html, body { height:100%; margin:0; }
     width: 100%;
     background-color: #253141;
     &-lists {
+      overflow-y: scroll;
       height: 100%;
       box-sizing: border-box;
       padding: 0 20px;
@@ -87,11 +88,19 @@ html, body { height:100%; margin:0; }
     border: 1px solid #eee;
     &-group {
       margin: 0 40px;
-      &-name{
-        color: #333;
-        font-size: 20px;
-        margin: 35px 0 15px;
+      &-left{
         float: left;
+          &-name{
+            color: #333;
+            font-size: 20px;
+            margin: 35px 0 15px;
+            float: left;
+          }
+        &-member {
+          color: #999;
+          font-size: 12px;
+          margin-top: 15px;
+        }
       }
       &-edit{
         color: #38AEF0;
@@ -102,17 +111,12 @@ html, body { height:100%; margin:0; }
         float: right;
       }
     }
-    &-member {
-      color: #999;
-      font-size: 12px;
-      margin: 0 40px;
-    }
   }
   &__body{
     height: calc( 100vh - 15% - 90px );
     &-message {
       padding: 26px 40px 0;
-      height: calc(100vh - 100px - 90px);
+      height: calc(100vh - 100px - 135px);
       overflow-y: scroll;
       &-list {
         margin-bottom: 40px;
@@ -156,25 +160,18 @@ html, body { height:100%; margin:0; }
       }
 
       &-mask {
-        background-color: #fff;
-        float: left;
-        height: 50px;
-        width: 30px;
-        label {
-          color: white;
-          background-color: white;
+          background-color: #fff;
+          float: left;
+          height: 50px;
+          padding-right: 10px;
           .fa-picture-o {
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
-            font-size: inherit;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            color: black;
             font-size: 20px;
             line-height: 50px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
           }
-        }
       }
       .button {
         background-color: #38AEF0;
@@ -187,6 +184,22 @@ html, body { height:100%; margin:0; }
         padding: 0 30px;
       }
 }
+}
+.text_field {
+    border: none;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    padding: 0 10px;
+    width: calc(100% - 150px);
+}
+
+.main__footer-mask-image{
+    font-size: 0px;
+    line-height: 50px;
+}
+.main__footer-mask-hidden {
+    display: none;
 }
 
 

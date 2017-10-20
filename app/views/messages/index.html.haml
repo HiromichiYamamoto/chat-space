@@ -1,0 +1,39 @@
+.main-left
+  .main-left__user
+    .main-left__user-content
+      .main-left__user-content-name #{current_user.name}
+      .main-left__user-content-newgroup
+        = link_to new_group_path do
+          = fa_icon 'pencil-square-o', class: 'icon'
+      }
+      .main-left__user-content-edit
+        = link_to edit_user_registration_path do
+          = fa_icon 'cog', class: 'icon'
+  .main-left__group
+    - if user_signed_in?
+      = render partial: 'layouts/index', locals: {groups: @groups}
+.main
+  .main__header
+    .main__header-group.clearfix
+      .main__header-group-left
+        .main__header-group-left-name #{@group.name}
+        .main__header-group-left-member
+          = "Member:"
+          - @group.members.each do |m|
+            #{m.user.name}
+      .main__header-group-edit
+        = link_to edit_group_path(@group.id) do
+          = "Edit"
+
+  .main__body
+    - if user_signed_in?
+      .main__body-message
+        = render @messages
+  .main__footer
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, placeholder: 'type a message', class: 'text_field'
+      .main__footer-mask
+        %label
+          .fa.fa-picture-o{ aria: { hidden: "true"}}
+          = f.file_field :image, class: 'main__footer-mask-hidden'
+      = f.submit "Send", class: 'button'

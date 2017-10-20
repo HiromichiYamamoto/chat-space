@@ -1,0 +1,11 @@
+.main__body-message-list
+  .main__body-message-list-upper
+    .main__body-message-list-upper-name
+      = current_user.name
+    .main__body-message-list-upper-time
+      = message.created_at
+  .main__body-message-list-lower
+    .main__body--message-list-lower-body
+      = message.body
+      = image_tag (message.image.to_s)
+
