@@ -17,7 +17,8 @@
   .main__header
     .main__header-group.clearfix
       .main__header-group-left
-        .main__header-group-left-name #{@group.name}
+        .main__header-group-left-name
+          = @group.name
         .main__header-group-left-member
           = "Member:"
           - @group.members.each do |m|

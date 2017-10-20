@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
-  helper_method :group_message
+  helper_method :last_message
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
@@ -12,14 +12,19 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
-  def group_message(group)
+  def last_message(group)
     message = Message.where(group_id: group).last
-    if (message.image).present?
+    if message.nil?
+      "メッセージがありません"
+    elsif message.body.present? && message.image.present?
+      message.body
+    elsif message.image.present?
       "画像が投稿されています"
-    elsif (message.body)
+    elsif message.body.present?
       message.body
     else
       "メッセージがありません"
     end
   end
+
 end
