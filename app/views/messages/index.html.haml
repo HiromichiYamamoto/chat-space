@@ -1,7 +1,8 @@
 .main-left
   .main-left__user
     .main-left__user-content
-      .main-left__user-content-name #{current_user.name}
+      .main-left__user-content-name
+        = current_user.name
       .main-left__user-content-newgroup
         = link_to new_group_path do
           = fa_icon 'pencil-square-o', class: 'icon'
