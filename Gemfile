@@ -70,4 +70,3 @@ gem 'carrierwave', '~> 1.1'
 gem 'mini_magick'
 
 gem 'config'
-

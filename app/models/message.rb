@@ -11,4 +11,5 @@ class Message < ApplicationRecord
       errors.add(:body,"メッセージを入力してください")
     end
   end
+
 end
