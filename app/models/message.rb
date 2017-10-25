@@ -7,9 +7,6 @@ class Message < ApplicationRecord
   private
   def upload_error
     body.presence or image.presence
-    # if body.blank? && image.blank?
-    #   errors.add(:body,"メッセージを入力してください")
-    # end
   end
 
 end
