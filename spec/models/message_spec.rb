@@ -24,7 +24,7 @@ describe Message do
       it "メッセージも画像もないと保存できない" do
         message = build(:message, body: nil, image: nil)
         message.valid?
-        expect(message.errors[:body_or_image]).to include("を入力してください")
+        expect(message.errors[:upload_error]).to include("を入力してください")
       end
 
       it "group_idがないと保存できない" do

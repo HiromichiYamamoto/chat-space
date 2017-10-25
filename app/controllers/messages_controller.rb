@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @groups = current_user.groups
@@ -16,7 +17,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path, notice: 'メッセージを投稿しました'
     else
-      render :back, alert: 'メッセージを入力してください'
+      redirect_to group_messages_path, alert: 'メッセージを入力してください'
     end
   end
 
