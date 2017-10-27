@@ -34,8 +34,8 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      console.log(html);
       $('.main__body-message').append(html)
+      $('.main__body').animate({scrollTop: $('.main__body-message').height()}, 2000);
       $('.text_field').val('')
       $('#message_image').val('')
     })
@@ -43,6 +43,5 @@ $(function() {
       alert('error');
     })
     $('#send_button').removeAttr('data-disable-with');
-    $('.main__body-message').animate({scrollTop:$(document).height()});
   })
 })

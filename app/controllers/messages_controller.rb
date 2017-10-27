@@ -14,9 +14,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    respond_to do |format|
-      format.html { redirect_to group_messages_path }
-      format.json
+    if @message.save
+      respond_to do |format|
+        format.html { redirect_to group_messages_path }
+        format.json
+      end
+    else
+      redirect_to group_messages_path, alert: 'メッセージを入力してください'
     end
   end
 
