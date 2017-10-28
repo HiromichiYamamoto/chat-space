@@ -22,10 +22,11 @@ class GroupsController < ApplicationController
   end
 
   def update
-    group = Group.find(params[:id])
-    if group.user_id == current_user.id
-      group.update(group_params)
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
       redirect_to :root
+    else
+      render :edit
     end
   end
 
