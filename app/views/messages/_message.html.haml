@@ -1,7 +1,7 @@
-.main__body-message-list
+.main__body-message-list{ "data-message-id": "#{message.id}"}
   .main__body-message-list-upper
     .main__body-message-list-upper-name
-      = current_user.name
+      = message.user.name
     .main__body-message-list-upper-time
       = message.created_at
   .main__body-message-list-lower

@@ -5,7 +5,12 @@ class MessagesController < ApplicationController
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
     @message = Message.new
-    @messages = @group.messages
+    # @messages = @group.messages
+    @messages = @group.messages.order(created_at: :ASC).includes(:user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
@@ -16,7 +21,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html { redirect_to group_messages_path }
+        format.html { redirect_to group_messages_path(params[:group_id]) }
         format.json
       end
     else

@@ -2,10 +2,10 @@ $(function() {
 
   function buildHTML(message){
     var insertImage = '';
-  if (message.image.url) {
-    insertImage = `<img src="${message.image.url}">`;
-  }
-    var html = `<div class="main__body-message-list">
+    if (message.image.url) {
+      insertImage = `<img src="${message.image.url}">`;
+    }
+    var html = `<div class="main__body-message-list" data-message-id = #{message.id}>
                   <div class="main__body-message-list-upper">
                     <div class="main__body-message-list-upper-name">${message.name}</div>
                     <div class="main__body-message-list-upper-time">${message.created_at}</div>
