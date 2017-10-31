@@ -5,7 +5,6 @@ class MessagesController < ApplicationController
     @groups = current_user.groups
     @group = Group.find(params[:group_id])
     @message = Message.new
-    # @messages = @group.messages
     @messages = @group.messages.order(created_at: :ASC).includes(:user)
     respond_to do |format|
       format.html
